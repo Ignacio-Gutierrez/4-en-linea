@@ -77,7 +77,7 @@ class test_game_Connect_4(unittest.TestCase):
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
                                         ['1', '2', '1', '2', '1', '2', '1', '2']])
 
-    def test_gandor_horizontal(self):
+    def test_gandor_horizontal_player2(self):
         en_linea = Connect_4()
         en_linea.put_token(1) #1
         en_linea.put_token(2) #2
@@ -110,6 +110,25 @@ class test_game_Connect_4(unittest.TestCase):
                                         ['1', '1', '2', '2', '2', '1', ' ', ' '], 
                                         ['1', '2', '1', '1', '2', '1', ' ', ' ']])
         self.assertEqual(en_linea.winner(), 'El Jugador 2 ganó con 4 en Horizontal')
+
+    def test_gandor_horizontal_player1(self):
+        en_linea = Connect_4()
+        en_linea.put_token(1) #1
+        en_linea.put_token(1) #2
+        en_linea.put_token(2) #1
+        en_linea.put_token(2) #2
+        en_linea.put_token(3) #1
+        en_linea.put_token(3) #2
+        en_linea.put_token(4) #1
+        self.assertEqual(en_linea.board, [[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
+                                        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
+                                        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
+                                        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
+                                        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
+                                        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
+                                        ['2', '2', '2', ' ', ' ', ' ', ' ', ' '], 
+                                        ['1', '1', '1', '1', ' ', ' ', ' ', ' ']])
+        self.assertEqual(en_linea.winner(), 'El Jugador 1 ganó con 4 en Horizontal')
 
     def test_gandor_horizontal(self):
         en_linea = Connect_4()
