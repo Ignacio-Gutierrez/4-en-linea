@@ -1,3 +1,4 @@
+from xmlrpc.client import TRANSPORT_ERROR
 from game import Connect_4
 
 import unittest
@@ -250,7 +251,9 @@ class test_game_Connect_4(unittest.TestCase):
                         ['1', '1', '1', '2', '1', '1', '2', '1']]
         self.assertEqual(en_linea.winner(), 'Empate')
 
-
+    def test_gandor_diagonal_n2(self):
+        en_linea = Connect_4()
+        self.assertEqual(en_linea.winner(), True)
 
 if __name__ == '__main__':
     unittest.main()
