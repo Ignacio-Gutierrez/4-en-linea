@@ -36,25 +36,36 @@ class Connect_4:
     # Revisar Horizontales
         for row in range(8):
             for col in range(5):
-                if self.board[row][col] != ' ' and self.board[row][col] == self.board[row][col+1] == self.board[row][col+2] == self.board[row][col+3]:
+                if(
+                     self.board[row][col] != ' ' and 
+                     self.board[row][col] == self.board[row][col+1] == self.board[row][col+2] == self.board[row][col+3]
+                ):
                     return (f'El Jugador {self.board[row][col]} ganó con 4 en Horizontal')
 
 	# Revisar Verticales
         for row in range(5):
             for col in range(8):
-                if self.board[row][col] != ' ' and self.board[row][col] == self.board[row+1][col] == self.board[row+2][col] == self.board[row+3][col]:
+                if( 
+                    self.board[row][col] != ' ' and
+                    self.board[row][col] == self.board[row+1][col] == self.board[row+2][col] == self.board[row+3][col]
+                ):
                     return (f'El Jugador {self.board[row][col]} ganó con 4 en Vertical')
 
 	# Revisar Diagonal Izquierda
         for row in range(5):
             for col in range(5):
-                if self.board[row][col] != ' ' and self.board[row][col] == self.board[row+1][col+1] == self.board[row+2][col+2] == self.board[row+3][col+3]:
+                if(
+                    self.board[row][col] != ' ' and 
+                    self.board[row][col] == self.board[row+1][col+1] == self.board[row+2][col+2] == self.board[row+3][col+3]
+                ):
                     return (f'El Jugador {self.board[row][col]} ganó con 4 en Diagonal Negativa')
 
 	# Revisar Diagonal Derecha
         for row in range(5):
             for col in range(3, 8):
-                if self.board[row][col] != ' ' and self.board[row][col] == self.board[row+1][col-1] == self.board[row+2][col-2] == self.board[row+3][col-3]:
+                if( self.board[row][col] != ' ' and 
+                    self.board[row][col] == self.board[row+1][col-1] == self.board[row+2][col-2] == self.board[row+3][col-3]
+                ):
                     return (f'El Jugador {self.board[row][col]} ganó con 4 en Diagonal Positiva')
             
         if not any(' ' in _ for _ in self.board):

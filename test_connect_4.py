@@ -29,7 +29,6 @@ class test_game_Connect_4(unittest.TestCase):
     
     def test_agregar_turno_J1(self):
         en_linea = Connect_4()
-        en_linea.turns
         self.assertEqual(en_linea.turns, 0)
         self.assertEqual(en_linea.player_turn(), '1')
 
@@ -54,9 +53,9 @@ class test_game_Connect_4(unittest.TestCase):
     
     def test_turnos(self):
         en_linea = Connect_4()
-        en_linea.player_turn
+        self.assertEqual(en_linea.player_turn(), '1')
         en_linea.put_token(1) #1
-        en_linea.player_turn
+        self.assertEqual(en_linea.player_turn(), '2')
         
     def test_agregar_fichas_1a8(self):
         en_linea = Connect_4()
