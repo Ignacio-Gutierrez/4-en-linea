@@ -2,7 +2,7 @@ from game import Connect_4
 
 import unittest
 
-class testConnect_4(unittest.TestCase):
+class test_game_Connect_4(unittest.TestCase):
 
     def test_matriz_8x8(self):
         en_linea = Connect_4()
