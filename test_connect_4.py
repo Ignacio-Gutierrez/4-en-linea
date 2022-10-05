@@ -1,5 +1,5 @@
-from xmlrpc.client import TRANSPORT_ERROR
 from game import Connect_4
+from unittest.mock import patch
 
 import unittest
 
@@ -28,6 +28,12 @@ class test_game_Connect_4(unittest.TestCase):
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
                                         ['1', ' ', ' ', ' ', ' ', ' ', ' ', ' ']])
     
+    @patch("builtins.print") 
+    def test_print_tablero(self, patched_print):
+        en_linea = Connect_4()
+        pass
+
+
     def test_agregar_turno_J1(self):
         en_linea = Connect_4()
         self.assertEqual(en_linea.turns, 0)
