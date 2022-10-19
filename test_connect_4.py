@@ -4,7 +4,7 @@ from unittest.mock import patch
 import unittest
 
 class test_game_Connect_4(unittest.TestCase):
-#TEST GAME
+
     def test_matriz_8x8(self):
         en_linea = Connect_4()
         self.assertEqual(en_linea.board, [[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], 
